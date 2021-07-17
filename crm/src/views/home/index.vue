@@ -1,16 +1,5 @@
 <template>
   <div class="home_container">
-    <!-- <h1 style="text-align: center; color: red">{{ $route.meta.title }}</h1> -->
-    <!-- <div class="menu-banner">
-      <div class="menu-wrap">
-        <ul>
-          <li v-for="(item, index) in menuData" :key="index">
-            <span ref="li" @mouseenter="enterEvent">{{ item.menuTitle }}</span>
-          </li>
-          <div class="b_liner" :style="style"></div>
-        </ul>
-      </div>
-    </div> -->
     <el-table
       ref="multipleTable"
       :data="tableData"
@@ -29,17 +18,11 @@
   </div>
 </template>
 <script>
-import { menuData } from "./menuList";
 export default {
   name: "home",
   components: {},
   data() {
     return {
-      menuData: menuData,
-      style: {
-        width: 0,
-        left: 0,
-      },
       left: 10,
       tableData: [
         {
@@ -85,21 +68,11 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    //  let li = this.$refs.li[0].getBoundingClientRect()
-    //  let {x, y, height} = dom.getBoundingClientRect()
-    //  console.log(x, y, height)
   },
   // 如果页面有keep-alive缓存功能，这个函数会触发
   activated() {},
   // 方法集合
   methods: {
-    enterEvent(ev) {
-      let dom = ev.target;
-      let { x, y, width } = dom.getBoundingClientRect();
-      this.style.width = width + "px";
-      this.style.left = x + "px";
-      console.log(dom.getBoundingClientRect());
-    },
     handleSelectionChange(val) {
       console.log(this.$refs)
       if (val.length > 1) {
