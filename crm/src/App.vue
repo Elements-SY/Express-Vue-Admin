@@ -20,4 +20,13 @@ html,
 body {
   background-color: rgb(240, 242, 245);
 }
+.atooltip.el-tooltip__popper[x-placement^="top"] .popper__arrow {
+  border-top-color: pink;
+}
+.atooltip.el-tooltip__popper[x-placement^="top"] .popper__arrow:after {
+  border-top-color: pink;
+}
+.atooltip {
+  background: pink !important;
+}
 </style>
